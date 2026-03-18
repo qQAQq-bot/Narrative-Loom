@@ -1,0 +1,14 @@
+{
+  "cases": [
+    {
+      "character_recall": 0.82,
+      "setting_recall": 0.75,
+      "event_recall": 0.74
+    },
+    {
+      "character_recall": 0.79,
+      "setting_recall": 0.73,
+      "event_recall": 0.72
+    }
+  ]
+}

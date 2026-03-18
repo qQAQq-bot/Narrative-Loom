@@ -1,0 +1,72 @@
+[
+  {
+    "id": "technique-analysis",
+    "name": "技法分析",
+    "kind": {
+      "built_in": "technique_analysis"
+    },
+    "enabled": true,
+    "provider_id": "openai",
+    "model": "gemini-2.5-pro",
+    "temperature": 0.2,
+    "max_tokens": 10000,
+    "system_prompt": null,
+    "output_mode": "json_object"
+  },
+  {
+    "id": "character-extraction",
+    "name": "人物提取",
+    "kind": {
+      "built_in": "character_extraction"
+    },
+    "enabled": true,
+    "provider_id": "openai",
+    "model": "gemini-2.5-pro",
+    "temperature": 0.2,
+    "max_tokens": 10000,
+    "system_prompt": "",
+    "output_mode": "json_object"
+  },
+  {
+    "id": "setting-extraction",
+    "name": "设定提取",
+    "kind": {
+      "built_in": "setting_extraction"
+    },
+    "enabled": true,
+    "provider_id": "openai",
+    "model": "gemini-2.5-pro",
+    "temperature": 0.2,
+    "max_tokens": 10000,
+    "system_prompt": "",
+    "output_mode": "json_object"
+  },
+  {
+    "id": "event-extraction",
+    "name": "事件提取",
+    "kind": {
+      "built_in": "event_extraction"
+    },
+    "enabled": true,
+    "provider_id": "openai",
+    "model": "gemini-2.5-pro",
+    "temperature": 0.2,
+    "max_tokens": 12000,
+    "system_prompt": null,
+    "output_mode": "json_object"
+  },
+  {
+    "id": "style-analysis",
+    "name": "风格分析",
+    "kind": {
+      "built_in": "style_analysis"
+    },
+    "enabled": true,
+    "provider_id": "openai",
+    "model": "gemini-2.5-pro",
+    "temperature": 0.2,
+    "max_tokens": 10000,
+    "system_prompt": null,
+    "output_mode": "json_object"
+  }
+]

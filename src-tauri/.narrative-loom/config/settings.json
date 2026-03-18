@@ -1,0 +1,12 @@
+{
+  "auto_accept_threshold": "medium",
+  "enabled_agents": [
+    "technique",
+    "character",
+    "setting",
+    "event",
+    "style"
+  ],
+  "logging_enabled": true,
+  "python_exe": "G:\\install\\miniconda3\\envs\\py311\\python.exe"
+}

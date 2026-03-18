@@ -1,0 +1,60 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies / build output
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Editor directories and files
+.vscode/
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Rust / Tauri
+src-tauri/target/
+target/
+
+# Python
+python/__pycache__/
+python/**/__pycache__/
+python/*.egg-info/
+python/.venv/
+python/venv/
+*.pyc
+*.pyo
+.pytest_cache/
+.ruff_cache/
+
+# Local tool / agent state
+.ace-tool/
+.claude/
+.sisyphus/
+test_file/
+
+# Books data (user content)
+books/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# OS
+Thumbs.db
+
+# Worktrees
+.worktrees/
+worktrees/

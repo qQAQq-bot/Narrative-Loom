@@ -1,0 +1,12 @@
+{
+  "active_provider": "gemini",
+  "gemini": {
+    "model": "gemini-embedding-001",
+    "api_key_ref": "embedding_gemini",
+    "proxy_url": "http://127.0.0.1:7890"
+  },
+  "openai": {
+    "model": "",
+    "api_key_ref": ""
+  }
+}

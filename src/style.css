@@ -1,0 +1,259 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply antialiased;
+  }
+
+  body {
+    @apply bg-fabric-cream text-stone-800;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+
+  .dark body {
+    @apply text-stone-200;
+  }
+
+  /* Fabric texture noise overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: var(--fabric-noise-opacity);
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    z-index: 9999;
+  }
+
+  .dark body::before {
+    filter: invert(1);
+  }
+
+  /* Light mode fabric colors - RGB values for Tailwind opacity support */
+  :root {
+    --fabric-linen: 245 240 232;
+    --fabric-canvas: 232 224 212;
+    --fabric-denim: 74 85 104;
+    --fabric-thread: 139 115 85;
+    --fabric-cream: 250 246 240;
+    --fabric-sand: 212 196 168;
+    --fabric-warm: 248 244 237;
+    --fabric-sepia: 112 66 20;
+
+    /* Shadow colors */
+    --fabric-shadow: rgba(139, 115, 85, 0.15);
+    --fabric-shadow-strong: rgba(139, 115, 85, 0.25);
+
+    /* Text overlay noise opacity */
+    --fabric-noise-opacity: 0.02;
+
+    /* Scrollbar colors */
+    --scrollbar-track: rgba(245, 240, 232, 0.5);
+    --scrollbar-thumb: rgba(212, 196, 168, 0.6);
+    --scrollbar-thumb-hover: rgba(139, 115, 85, 0.5);
+  }
+
+  /* Dark mode fabric colors - warm, aged leather/parchment feel */
+  .dark {
+    --fabric-linen: 42 37 32;
+    --fabric-canvas: 61 54 48;
+    --fabric-denim: 168 180 196;
+    --fabric-thread: 196 168 130;
+    --fabric-cream: 30 26 22;
+    --fabric-sand: 92 80 64;
+    --fabric-warm: 37 32 24;
+    --fabric-sepia: 212 184 150;
+
+    /* Shadow colors for dark mode */
+    --fabric-shadow: rgba(0, 0, 0, 0.3);
+    --fabric-shadow-strong: rgba(0, 0, 0, 0.5);
+
+    /* Text overlay noise opacity */
+    --fabric-noise-opacity: 0.03;
+
+    /* Scrollbar colors */
+    --scrollbar-track: rgba(42, 37, 32, 0.5);
+    --scrollbar-thumb: rgba(92, 80, 64, 0.6);
+    --scrollbar-thumb-hover: rgba(196, 168, 130, 0.5);
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 9999px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover);
+    background-clip: padding-box;
+  }
+}
+
+@layer components {
+  /* Fabric card base */
+  .fabric-card {
+    @apply bg-fabric-warm border border-fabric-sand/40 rounded-xl;
+    @apply transition-all duration-220;
+    box-shadow: 0 2px 8px -2px var(--fabric-shadow), 0 4px 16px -4px var(--fabric-shadow);
+    background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%238b7355' fill-opacity='0.03'%3E%3Cpath d='M0 0h4v4H0V0zm4 4h4v4H4V4z'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .dark .fabric-card {
+    background-image: url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 8 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23c4a882' fill-opacity='0.04'%3E%3Cpath d='M0 0h4v4H0V0zm4 4h4v4H4V4z'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .fabric-card:hover {
+    box-shadow: 0 4px 12px -2px var(--fabric-shadow-strong), 0 8px 24px -4px var(--fabric-shadow);
+    transform: translateY(-2px);
+  }
+
+  .fabric-card:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px -2px var(--fabric-shadow), 0 4px 16px -4px var(--fabric-shadow);
+  }
+
+  /* Stitch border effect */
+  .stitch-border {
+    position: relative;
+  }
+
+  .stitch-border::after {
+    content: '';
+    position: absolute;
+    inset: 3px;
+    border: 1px dashed rgba(139, 115, 85, 0.2);
+    border-radius: inherit;
+    pointer-events: none;
+  }
+
+  .dark .stitch-border::after {
+    border-color: rgba(196, 168, 130, 0.2);
+  }
+
+  /* Fabric button */
+  .fabric-btn {
+    @apply px-5 py-2.5 rounded-lg font-medium;
+    @apply bg-fabric-canvas border border-fabric-sand/50;
+    @apply text-fabric-sepia;
+    @apply transition-all duration-220;
+    box-shadow: inset 0 1px 2px var(--fabric-shadow);
+  }
+
+  .fabric-btn:hover {
+    @apply bg-fabric-sand/30;
+    box-shadow: 0 2px 8px -2px var(--fabric-shadow);
+  }
+
+  .fabric-btn:active {
+    @apply translate-y-px;
+    box-shadow: inset 0 1px 2px var(--fabric-shadow);
+  }
+
+  .fabric-btn-primary {
+    @apply px-5 py-2.5 rounded-lg font-medium;
+    @apply bg-primary-500 border border-primary-600/50;
+    @apply text-white;
+    @apply transition-all duration-220;
+    box-shadow: 0 2px 8px -2px var(--fabric-shadow);
+  }
+
+  .fabric-btn-primary:hover {
+    @apply bg-primary-600 -translate-y-0.5;
+    box-shadow: 0 4px 12px -2px var(--fabric-shadow-strong);
+  }
+
+  .fabric-btn-primary:active {
+    @apply translate-y-0 bg-primary-700;
+  }
+
+  /* Fabric input */
+  .fabric-input {
+    @apply w-full px-3 py-2 border border-fabric-sand/50 rounded-lg;
+    @apply bg-fabric-warm text-fabric-sepia;
+    @apply focus:ring-2 focus:ring-primary-400/50 focus:border-primary-400;
+    @apply transition-colors duration-180;
+    @apply placeholder:text-fabric-thread/40;
+  }
+
+  /* Fabric select */
+  .fabric-select {
+    @apply w-full px-3 py-2 border border-fabric-sand/50 rounded-lg;
+    @apply bg-fabric-warm text-fabric-sepia;
+    @apply focus:ring-2 focus:ring-primary-400/50 focus:border-primary-400;
+    @apply transition-colors duration-180;
+    @apply cursor-pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%238b7355' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    padding-right: 2.5rem;
+  }
+
+  .dark .fabric-select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%23c4a882' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
+  }
+
+  /* Reader content */
+  .reader-content {
+    @apply font-serif text-lg leading-relaxed text-stone-700;
+  }
+
+  .dark .reader-content {
+    @apply text-stone-300;
+  }
+
+  /* Evidence excerpt with stitch effect */
+  .evidence-excerpt {
+    @apply font-serif italic text-stone-600;
+    @apply pl-4 border-l-2 border-dashed border-fabric-thread/40;
+  }
+
+  .dark .evidence-excerpt {
+    @apply text-stone-400;
+  }
+
+  /* Section with fabric background */
+  .fabric-section {
+    @apply bg-fabric-linen/50 rounded-2xl p-6;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4c4a8' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .dark .fabric-section {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c4a882' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Tag/badge with fabric feel */
+  .fabric-tag {
+    @apply inline-flex items-center px-2.5 py-1 rounded-md text-xs font-medium;
+    @apply bg-fabric-canvas/80 text-fabric-thread border border-fabric-sand/30;
+  }
+}
+
+@layer utilities {
+  /* Soft highlight on hover */
+  .fabric-highlight {
+    @apply transition-all duration-220;
+  }
+
+  .fabric-highlight:hover {
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(212,196,168,0.1) 100%);
+  }
+
+  .dark .fabric-highlight:hover {
+    background: linear-gradient(135deg, rgba(196,168,130,0.08) 0%, rgba(92,80,64,0.08) 100%);
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "url": "http://localhost:8317/v1/responses",
+  "api_format": "responses",
+  "status_code": 200,
+  "success": true,
+  "has_content": true,
+  "content_length": 2742,
+  "error": null,
+  "response_data": {
+    "id": "resp_Ecp5aYTkM8WOjMcPmoeN2AM",
+    "object": "response",
+    "created_at": 1769589276,
+    "status": "completed",
+    "background": false,
+    "error": null,
+    "incomplete_details": null,
+    "model": "gemini-3-pro-high",
+    "output": [
+      {
+        "id": "msg_Ecp5aYTkM8WOjMcPmoeN2AM_0",
+        "type": "message",
+        "status": "completed",
+        "content": [
+          {
+            "type": "output_text",
+            "annotations": [],
+            "logprobs": [],
+            "text": "```json\n{\n  \"settings\": [\n    {\n      \"type\": \"worldview\",\n      \"name\": \"龙角\",\n      \"description\": \"龙人种成年后显现的特征，实质是体内魔力回路在体外的具象化延伸。\",\n      \"description_structured\": {\n        \"physical\": \"平时呈虚幻状态，发出淡淡荧光，位于额头。\",\n        \"function\": \"力量的源泉，气量越大角越强，也是魔力回路的具象化。\",\n        \"rules\": \"普通肉体触碰会穿透（像空气），只有亲密伴侣的角或魔法物品才能触碰。\"\n      },\n      \"properties\": [\n        \"魔力回路具现化\",\n        \"虚幻触感\",\n        \"成年象征\"\n      ],\n      \"evidence\": [\n        \"龙人种的角居然是魔力回路的具现化\",\n        \"如果不是用角的话是碰不到的……在触碰到那只小角之后居然像是摸到了空气一样穿透过去\"\n      ],\n      \"is_new\": true\n    },\n    {\n      \"type\": \"worldview\",\n      \"name\": \"适尾仪式\",\n      \"description\": \"龙人种族群为成年族人举办的特殊社交仪式，旨在帮助刚成年的龙人寻找伴侣。\",\n      \"description_structured\": {\n        \"function\": \"为成年的族人提供寻找适尾伴侣的机会。\",\n        \"history\": \"部落里的传统习俗。\",\n        \"rules\": \"通常在刚成年时举行，因为此时找到伴侣几率最大。\"\n      },\n      \"properties\": [\n        \"求偶仪式\",\n        \"部落习俗\"\n      ],\n      \"evidence\": [\n        \"族里会为成年的族人举办一场交流宴会，让他们更好的适尾\",\n        \"没办法在部落里举行适尾仪式\"\n      ],\n      \"is_new\": true\n    },\n    {\n      \"type\": \"worldview\",\n      \"name\": \"龙人成年期\",\n      \"description\": \"龙人种走向成熟的生理阶段，伴随着显著的生理反应和魔力增长。\",\n      \"description_structured\": {\n        \"physical\": \"体温极度升高，身体散发大量蒸汽，皮肤鳞片滚烫，龙角开始生长。\",\n        \"status\": \"持续时间约十几天，完成后力量会更强盛。\",\n        \"rules\": \"成年之前无法进行繁衍行为。\"\n      },\n      \"properties\": [\n        \"高热蒸汽\",\n        \"力量增长\",\n        \"持续十数天\"\n      ],\n      \"evidence\": [\n        \"拉法埃尔大人要成年了，这是她即将步入完整的征兆\",\n        \"龙人种成年之前是不可能做那种事情的\"\n      ],\n      \"is_new\": true\n    },\n    {\n      \"type\": \"item\",\n      \"name\": \"手杖\",\n      \"description\": \"费舍尔随身携带的魔法媒介，在本章中被发现具有触碰龙人灵体化龙角的能力。\",\n      \"description_structured\": {\n        \"function\": \"作为魔法媒介，能触碰到物理手段无法接触的龙角。\",\n        \"physical\": \"使用时会微微亮起光芒。\"\n      },\n      \"properties\": [\n        \"魔法媒介\",\n        \"可触碰灵体\"\n      ],\n      \"evidence\": [\n        \"带着光芒的手杖居然触碰到了那看似虚幻的小角\",\n        \"将旁边的手杖拿了起来，那手杖微微亮起光芒\"\n      ],\n      \"is_new\": false\n    },\n    {\n      \"type\": \"location\",\n      \"name\": \"酒店\",\n      \"description\": \"费舍尔一行人在旅途中下榻的场所，因拉法埃尔的成年反应导致房间充满蒸汽。\",\n      \"description_structured\": {\n        \"atmosphere\": \"房间内充满了龙人散发的高温蒸汽，引起了服务人员的误会。\",\n        \"inhabitants\": \"费舍尔、龙人娘们、误会的女仆。\"\n      },\n      \"properties\": [\n        \"住宿场所\",\n        \"充满蒸汽\"\n      ],\n      \"evidence\": [\n        \"跟随着费舍尔走入了酒店楼上的房间\",\n        \"那位绅士带着两位女士进房间了，到现在都没出来，房间里还冒烟了\"\n      ],\n      \"is_new\": true\n    },\n    {\n      \"type\": \"organization\",\n      \"name\": \"北枝部落\",\n      \"description\": \"小龙拉尔原本所属的龙人部落，对幼龙有严格的饮食管教。\",\n      \"description_structured\": {\n        \"rules\": \"禁止孩子晚上吃蜂蜜，担心牙齿损坏。\",\n        \"inhabitants\": \"拉尔及其母亲。\"\n      },\n      \"properties\": [\n        \"龙人部落\",\n        \"严格管教\"\n      ],\n      \"evidence\": [\n        \"北枝部落的孩子晚上可以吃蜂蜜吗\",\n        \"我妈妈晚上就不让我吃蜂蜜，她说我的牙齿会坏掉的\"\n      ],\n      \"is_new\": true\n    }\n  ]\n}\n```"
+          }
+        ],
+        "role": "assistant"
+      }
+    ],
+    "usage": {
+      "input_tokens": 5643,
+      "input_tokens_details": {
+        "cached_tokens": 0
+      },
+      "output_tokens": 1198,
+      "output_tokens_details": {
+        "reasoning_tokens": 2166
+      },
+      "total_tokens": 6841
+    }
+  },
+  "status": "completed"
+}
